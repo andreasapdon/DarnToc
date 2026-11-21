@@ -1,8 +1,8 @@
-# ClipCut for Blackmagic RAW
+# DarnToc for Blackmagic RAW
 
 **Trim Blackmagic RAW clips on your Mac, losslessly.**
 
-ClipCut opens a `.braw` clip, lets you find exactly the frames you want, and saves them as a new `.braw` file. Frames are copied exactly as the camera recorded them: no re-encoding, no quality loss. The new file opens in DaVinci Resolve like any other Blackmagic RAW clip, with all of its camera metadata intact.
+DarnToc opens a `.braw` clip, lets you find exactly the frames you want, and saves them as a new `.braw` file. Frames are copied exactly as the camera recorded them: no re-encoding, no quality loss. The new file opens in DaVinci Resolve like any other Blackmagic RAW clip, with all of its camera metadata intact.
 
 It's built for the everyday job of cutting a long recording down to the parts you actually need before you edit, archive or share it.
 
@@ -21,7 +21,7 @@ It's built for the everyday job of cutting a long recording down to the parts yo
 - **Safe exports.** Every file is written under a temporary name, then reopened and frame-counted before it's given its final name. A failed, cancelled or interrupted export never leaves a damaged file that looks like a finished clip. The Mac won't sleep during an export, and existing files are never overwritten by the queue.
 - **Metadata kept.** Camera, lens, scene and take, timecode, GPS location, per-frame data, audio and embedded LUTs all carry over. Settings saved in a `.sidecar` file (e.g. from Resolve) are written into the trimmed file.
 - **Clip Info.** Press ⌘I to see camera and per-frame details for the clip and frame you're looking at.
-- **Built-in help.** Help → ClipCut Help (⌘?).
+- **Built-in help.** Help → DarnToc Help (⌘?).
 
 ## Requirements
 
@@ -31,13 +31,13 @@ It's built for the everyday job of cutting a long recording down to the parts yo
 
 ## Install
 
-1. Download `ClipCut-<version>.dmg` from the [Releases page](../../releases/latest).
-2. Open it and drag **ClipCut** to **Applications**.
-3. Open ClipCut. On first launch macOS asks you to confirm opening an app downloaded from the internet; click **Open**.
+1. Download `DarnToc-<version>.dmg` from the [Releases page](../../releases/latest).
+2. Open it and drag **DarnToc** to **Applications**.
+3. Open DarnToc. On first launch macOS asks you to confirm opening an app downloaded from the internet; click **Open**.
 
-ClipCut is signed with a Developer ID and notarised by Apple.
+DarnToc is signed with a Developer ID and notarised by Apple.
 
-To open clips straight from Finder, right-click a `.braw` file and choose **Open With → ClipCut**.
+To open clips straight from Finder, right-click a `.braw` file and choose **Open With → DarnToc**.
 
 ## Quick start
 
@@ -49,17 +49,17 @@ Space plays, ←/→ step one frame, ⇧←/⇧→ step ten, and ⌘G jumps to a
 
 ## Privacy
 
-ClipCut works entirely on your Mac. It collects no data, has no analytics and makes no network connections of its own. The only exception: clicking a GPS location in Clip Info opens Apple Maps. The export queue is stored locally in `~/Library/Application Support/ClipCut`.
+DarnToc works entirely on your Mac. It collects no data, has no analytics and makes no network connections of its own. The only exception: clicking a GPS location in Clip Info opens Apple Maps. The export queue is stored locally in `~/Library/Application Support/DarnToc`.
 
 ## Disclaimer
 
-ClipCut is provided **as is, without warranty of any kind**. It only ever reads your original clips and writes new files, but always keep backups of important footage.
+DarnToc is provided **as is, without warranty of any kind**. It only ever reads your original clips and writes new files, but always keep backups of important footage.
 
 ## Acknowledgements
 
-ClipCut uses the Blackmagic RAW SDK. The Blackmagic RAW SDK and its API libraries are © Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic and Blackmagic RAW are trademarks of Blackmagic Design Pty. Ltd.
+DarnToc uses the Blackmagic RAW SDK. The Blackmagic RAW SDK and its API libraries are © Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic and Blackmagic RAW are trademarks of Blackmagic Design Pty. Ltd.
 
-**ClipCut is an independent product. It is not made, endorsed or supported by Blackmagic Design.**
+**DarnToc is an independent product. It is not made, endorsed or supported by Blackmagic Design.**
 
 The Blackmagic RAW SDK licence and third-party notices are included in the app: **Help → Acknowledgements**.
 
