@@ -1,47 +1,70 @@
-# DarnToc for Blackmagic RAW
+# ClipCut for Blackmagic RAW
 
-Opens a Blackmagic RAW clip, lets you scrub and set in/out points, and exports a lossless trimmed `.braw`. Export uses the SDK's own `IBlackmagicRawClip::CreateJobTrim`.
+**Trim Blackmagic RAW clips on your Mac, losslessly.**
 
-Requires macOS 14+ and the Blackmagic RAW SDK 6.0 at `/Applications/Blackmagic RAW/Blackmagic RAW SDK` (path set in `Package.swift`).
+ClipCut opens a `.braw` clip, lets you find exactly the frames you want, and saves them as a new `.braw` file. Frames are copied exactly as the camera recorded them: no re-encoding, no quality loss. The new file opens in DaVinci Resolve like any other Blackmagic RAW clip, with all of its camera metadata intact.
 
-## Build the app
+It's built for the everyday job of cutting a long recording down to the parts you actually need before you edit, archive or share it.
 
-```sh
-cd ~/Developer/BRAWTrimmer
-./make-app.sh --install
-```
+**[⬇ Download the latest version](../../releases/latest)**
 
-This creates `/Applications/DarnToc.app`, with the Blackmagic RAW framework embedded and ad-hoc signed for this Mac. Because it registers as a .braw viewer, Finder offers DarnToc under **Open With**. Blackmagic RAW Player stays the default unless you change that in Get Info.
+---
 
-During development: `open Package.swift` in Xcode and Run (⌘R), or `swift run`.
+## Features
 
-## Keys
+- **Lossless trims.** Frames are copied byte-for-byte, so quality is identical to the original.
+- **Fast preview.** Smooth scrubbing and playback with sound, decoded on your Mac's GPU. A filmstrip and timeline help you find your place in long clips.
+- **Frame-accurate In and Out.** Press I and O, drag the handles, or type an exact frame number, timecode or offset (+5, −10).
+- **Rec.709 preview.** Shows log (Film) footage with normal contrast while you choose frames. Exported files keep the camera's original settings.
+- **Export queue.** Mark several ranges, from one clip or many, then export them all to a folder in one go.
+- **Honest progress.** Shows how much has been written and roughly how long is left, which helps with very large clips.
+- **Safe exports.** Every file is written under a temporary name, then reopened and frame-counted before it's given its final name. A failed, cancelled or interrupted export never leaves a damaged file that looks like a finished clip. The Mac won't sleep during an export, and existing files are never overwritten by the queue.
+- **Metadata kept.** Camera, lens, scene and take, timecode, GPS location, per-frame data, audio and embedded LUTs all carry over. Settings saved in a `.sidecar` file (e.g. from Resolve) are written into the trimmed file.
+- **Clip Info.** Press ⌘I to see camera and per-frame details for the clip and frame you're looking at.
+- **Built-in help.** Help → ClipCut Help (⌘?).
 
-| Key | Action |
-|---|---|
-| ⌘O | Open clip (or drag one onto the window) |
-| Space | Play / pause (within in–out) |
-| ← / → | Step one frame |
-| ↑ / ↓ | Jump to In / Out |
-| I / O | Set In / Out at playhead |
-| M | Mute / unmute |
-| ⌘E | Export the current In–Out range |
-| A | Add the current In–Out range to the export queue |
-| ⇧⌘E | Show / hide the export queue |
+## Requirements
 
-In and Out are both inclusive.
+- macOS 14 Sonoma or later
+- Apple silicon or Intel Mac (runs natively on both; no Rosetta)
+- Blackmagic RAW (`.braw`) clips. Tested with Blackmagic Pocket Cinema Camera 4K footage.
 
-## Export queue
+## Install
 
-Saves In–Out ranges from any number of clips, remembered between launches. **Export to Folder…** writes each range that hasn't been exported yet, named by its label. Existing files are never overwritten: a number is added to the name instead. Every export writes `name.partial.braw` first, then reopens the file and checks its frame count before renaming it. A failed or cancelled export never leaves a file that looks like a finished clip.
+1. Download `ClipCut-<version>.dmg` from the [Releases page](../../releases/latest).
+2. Open it and drag **ClipCut** to **Applications**.
+3. Open ClipCut. On first launch macOS asks you to confirm opening an app downloaded from the internet; click **Open**.
 
-## Layout
+ClipCut is signed with a Developer ID and notarised by Apple.
 
-- `Sources/BRAWBridge`: Objective-C++ wrapper (`BRAWClip`) around the COM API. It handles open, metadata, frame decode to `CGImage`, and SDK trim with progress and cancel. `BRAWDispatch.cpp` compiles Blackmagic's runtime loader straight from the SDK folder.
-- `Sources/BRAWTrimmer`: SwiftUI app (model + view).
+To open clips straight from Finder, right-click a `.braw` file and choose **Open With → ClipCut**.
 
-## Notes
+## Quick start
 
-- The preview decodes on the CPU at 1/4 resolution by default. Frames are coalesced, so scrubbing never queues a backlog, and playback drops frames rather than lagging.
-- The preview uses the clip's own colour settings, so Film-gamma clips look flat. Trimming doesn't touch the image data either way.
-- When the app is run outside an `.app` bundle, the framework loads from the installed SDK. When it's packaged as a proper `.app`, embed `BlackmagicRawAPI.framework` in `Contents/Frameworks` and it gets picked up first.
+1. Press ⌘O or drag a clip onto the window.
+2. Scrub to the first frame you want and press **I**; scrub to the last and press **O**.
+3. Press ⌘E to export, or **A** to add the range to the queue and export several at once.
+
+Space plays, ←/→ step one frame, ⇧←/⇧→ step ten, and ⌘G jumps to a frame or timecode. The full shortcut list is in the built-in help.
+
+## Privacy
+
+ClipCut works entirely on your Mac. It collects no data, has no analytics and makes no network connections of its own. The only exception: clicking a GPS location in Clip Info opens Apple Maps. The export queue is stored locally in `~/Library/Application Support/ClipCut`.
+
+## Disclaimer
+
+ClipCut is provided **as is, without warranty of any kind**. It only ever reads your original clips and writes new files, but always keep backups of important footage.
+
+## Acknowledgements
+
+ClipCut uses the Blackmagic RAW SDK. The Blackmagic RAW SDK and its API libraries are © Blackmagic Design Pty. Ltd. Blackmagic Design, Blackmagic and Blackmagic RAW are trademarks of Blackmagic Design Pty. Ltd.
+
+**ClipCut is an independent product. It is not made, endorsed or supported by Blackmagic Design.**
+
+The Blackmagic RAW SDK licence and third-party notices are included in the app: **Help → Acknowledgements**.
+
+## Feedback
+
+Found a problem or have a suggestion? Open an [issue](../../issues).
+
+© 2026 Andrew Rees
