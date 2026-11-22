@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="path/to/screenshot.png" alt="DarnToc screenshot" width="800">
+</p>
+
 # DarnToc for Blackmagic RAW
 
 **Trim Blackmagic RAW clips on your Mac, losslessly.**
