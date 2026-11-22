@@ -12,6 +12,12 @@ DarnToc opens a `.braw` clip, lets you find exactly the frames you want, and sav
 
 It's built for the everyday job of cutting a long recording down to the parts you actually need before you edit, archive or share it.
 
+Languages: English · Cymraeg · 日本語 · Español
+
+Why Cymraeg? - because the Welsh language is beautiful, and "Darn" is "a little bit" and "Toc" is "cut" (similar to the English "dock").
+
+Hwyl Fawr, Pawb!
+
 **[⬇ Download the latest version](../../releases/latest)**
 
 ---
