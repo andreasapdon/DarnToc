@@ -16,7 +16,7 @@ Languages: English · Cymraeg · 日本語 · Español
 
 Why Cymraeg? - because the Welsh language is beautiful, and "Darn" is "a little bit" and "Toc" is "cut" (similar to the English "dock").
 
-Hwyl Fawr, Pawb!
+Hwyl am y tro, Pawb!
 
 **[⬇ Download the latest version](../../releases/latest)**
 
