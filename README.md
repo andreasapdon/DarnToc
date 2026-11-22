@@ -6,6 +6,8 @@
 
 **Trim Blackmagic RAW clips on your Mac, losslessly.**
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/andreasapdon)
+
 DarnToc opens a `.braw` clip, lets you find exactly the frames you want, and saves them as a new `.braw` file. Frames are copied exactly as the camera recorded them: no re-encoding, no quality loss. The new file opens in DaVinci Resolve like any other Blackmagic RAW clip, with all of its camera metadata intact.
 
 It's built for the everyday job of cutting a long recording down to the parts you actually need before you edit, archive or share it.
@@ -70,5 +72,8 @@ The Blackmagic RAW SDK licence and third-party notices are included in the app: 
 ## Feedback
 
 Found a problem or have a suggestion? Open an [issue](../../issues).
+
+## Support
+If DarnToc saves you time, you can [buy me a coffee](https://buymeacoffee.com/andreasapdon) ☕
 
 © 2026 Andrew Rees
