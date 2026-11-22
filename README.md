@@ -9,11 +9,6 @@
 DarnToc opens a `.braw` clip, lets you find exactly the frames you want, and saves them as a new `.braw` file. Frames are copied exactly as the camera recorded them: no re-encoding, no quality loss. The new file opens in DaVinci Resolve like any other Blackmagic RAW clip, with all of its camera metadata intact.
 
 It's built for the everyday job of cutting a long recording down to the parts you actually need before you edit, archive or share it.
-If you would like to contribute to the costs of development, or just to show your gratitude if you find this app useful:
-<a href="https://buymeacoffee.com" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
-</a>
-
 
 **[⬇ Download the latest version](../../releases/latest)**
 
