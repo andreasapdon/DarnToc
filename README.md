@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="path/to/screenshot.png" alt="DarnToc screenshot" width="800">
+  <img src="DarnTocSShot.png" alt="DarnToc screenshot" width="800">
 </p>
 
 # DarnToc for Blackmagic RAW
