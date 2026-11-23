@@ -16,7 +16,7 @@ Languages: English · Cymraeg · 日本語 · Español
 
 Why Cymraeg? - because the Welsh language is beautiful, and "Darn" is "a little bit" and "Toc" is "cut" (similar to the English "dock").
 
-Bydded y grym fod gyda chi i gyd!
+Bydded y grym gyda chi i gyd!
 
 **[⬇ Download the latest version](../../releases/latest)**
 
