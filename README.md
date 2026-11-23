@@ -27,9 +27,9 @@ Bydded y grym fod gyda chi i gyd!
 - **Lossless trims.** Frames are copied byte-for-byte, so quality is identical to the original.
 - **Fast preview.** Smooth scrubbing and playback with sound, decoded on your Mac's GPU. A filmstrip and timeline help you find your place in long clips.
 - **Frame-accurate In and Out.** Press I and O, drag the handles, or type an exact frame number, timecode or offset (+5, −10).
-- **Rec.709 preview.** Shows log (Film) footage with normal contrast while you choose frames. Exported files keep the camera's original settings.
+- **Rec.709 and LUT preview.** Shows log (Film) footage with normal contrast while you choose frames. Clips with a built-in LUT get a LUT switch instead, so you can see the log image underneath. Exported files keep the camera's original settings.
 - **Export queue.** Mark several ranges, from one clip or many, then export them all to a folder in one go.
-- **Honest progress.** Shows how much has been written and roughly how long is left, which helps with very large clips.
+- **Big clips welcome.** Clips open in the background, with download progress for clips in iCloud Drive. Export progress shows how much has been written and roughly how long is left.
 - **Safe exports.** Every file is written under a temporary name, then reopened and frame-counted before it's given its final name. A failed, cancelled or interrupted export never leaves a damaged file that looks like a finished clip. The Mac won't sleep during an export, and existing files are never overwritten by the queue.
 - **Metadata kept.** Camera, lens, scene and take, timecode, GPS location, per-frame data, audio and embedded LUTs all carry over. Settings saved in a `.sidecar` file (e.g. from Resolve) are written into the trimmed file.
 - **Clip Info.** Press ⌘I to see camera and per-frame details for the clip and frame you're looking at.
@@ -39,7 +39,7 @@ Bydded y grym fod gyda chi i gyd!
 
 - macOS 14 Sonoma or later
 - Apple silicon or Intel Mac (runs natively on both; no Rosetta)
-- Blackmagic RAW (`.braw`) clips. Tested with Blackmagic Pocket Cinema Camera 4K footage.
+- Blackmagic RAW (`.braw`) clips. Tested with Blackmagic Pocket Cinema Camera 4K footage, 4K60 clips over 800 GB, and Blackmagic Design's URSA Cine 17K sample clips.
 
 ## Install
 
@@ -61,7 +61,9 @@ Space plays, ←/→ step one frame, ⇧←/⇧→ step ten, and ⌘G jumps to a
 
 ## Privacy
 
-DarnToc works entirely on your Mac. It collects no data, has no analytics and makes no network connections of its own. The only exception: clicking a GPS location in Clip Info opens Apple Maps. The export queue is stored locally in `~/Library/Application Support/DarnToc`.
+DarnToc works entirely on your Mac. It collects no data, has no analytics and makes no network connections of its own. The exceptions: clicking a GPS location in Clip Info opens Apple Maps, and opening a clip stored in iCloud Drive asks macOS to download it.
+
+DarnToc keeps a diagnostic log on your Mac in `~/Library/Logs/DarnToc`. It contains clip file names, folder paths and technical details such as your Mac's model and macOS version, never video. It's only sent if you choose **Help → Send Error Report…** and send the email yourself. The export queue is stored locally in `~/Library/Application Support/DarnToc`.
 
 ## Disclaimer
 
@@ -77,7 +79,9 @@ The Blackmagic RAW SDK licence and third-party notices are included in the app: 
 
 ## Feedback
 
-Found a problem or have a suggestion? Open an [issue](../../issues).
+Something not working? Choose **Help → Send Error Report…**: DarnToc creates an email with its diagnostic log attached, and you can read it before sending.
+
+Have a suggestion? Open an [issue](../../issues).
 
 ## Support
 If DarnToc saves you time, you can [buy me a coffee](https://buymeacoffee.com/andreasapdon) ☕
